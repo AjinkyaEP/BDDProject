@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Custom suite" verbose="1" thread-count="1" parallel="tests" configfailurepolicy="continue">
+    <listeners>
+        <listener class-name="org.utility.TestNGExecutionListener"></listener>
+    </listeners>
+    <test name="To verify whether customer is able to search fligh one way" annotations="JDK" preserve-order="true">
+        <classes>
+            <class name="org.stepDefinition.TestRunner1"/>
+        </classes>
+    </test>
+    <test name="To verify whether customer is able to search fligh both way" annotations="JDK" preserve-order="true">
+        <classes>
+            <class name="org.stepDefinition.TestRunner2"/>
+        </classes>
+    </test>
+</suite>
