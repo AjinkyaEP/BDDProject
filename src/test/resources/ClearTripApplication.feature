@@ -20,7 +20,7 @@ Feature: To search for a flight.
       | numberOfAdults | numberOfInfants | numberOfChildren |
       |              1 |               1 |                1 |
       |              2 |               2 |                2 |
-      |              1 |               2 |                1 |
+      |              2 |               2 |                1 |
 
   #This is positive journey where customer tries to validate whether is able to search for round way flight.
   @SearchFlightBothWay
@@ -39,5 +39,5 @@ Feature: To search for a flight.
       | numberOfAdults | numberOfInfants | numberOfChildren |
       |              1 |               1 |                1 |
       |              2 |               2 |                2 |
-      |              1 |               2 |                1 |
+      |              2 |               2 |                1 |
       
