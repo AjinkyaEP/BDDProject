@@ -21,6 +21,7 @@ public class HomePage
 	private static String numberOfChildren="//*[@id='Childrens']";
 	private static String numberOfInfants="//*[@id='Infants']";
 	private static String searchFlightButton="//*[@id=\"SearchBtn\"]";
+	private static String twoWayRadioButton="//*[@id=\"RoundTrip\"]";
 	
 	public static boolean isDisplayed(Pom pom)  
 	{
@@ -42,6 +43,14 @@ public class HomePage
 		element=pom.driver.findElement(By.xpath(oneWayRadioButton));
 		if (element==null)
 			log.error("Unable to locate element for one way radio button");
+		return element;
+	}
+	
+	public static WebElement twoWayOption(Pom pom)
+	{
+		element=pom.driver.findElement(By.xpath(twoWayRadioButton));
+		if (element==null)
+			log.error("Unable to locate element for return trip radio button");
 		return element;
 	}
 	

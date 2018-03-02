@@ -38,7 +38,14 @@ public class StepDefinition
 		log.info("Clicking on One Way option");
 		HomePage.oneWayOption(pom).click();
 	}
-
+	
+	@Given("^user opts for return trip$")
+	public void user_opts_for_return_trip() 
+	{
+		log.info("Clicking on Round trip option");
+		HomePage.twoWayOption(pom).click();
+	}
+	
 	@Given("^user enters flight from$")
 	public void user_enters_flight_from()  
 	{
@@ -63,18 +70,18 @@ public class StepDefinition
 		Thread.sleep(1000);
 	}
 
-	@Given("^user selects number of traveller$")
-	public void user_selects_number_of_traveller() throws InterruptedException 
+	@Given("^user selects \"(.*?)\" \"(.*?)\" and \"(.*?)\"$")
+	public void user_selects_and(String numberOfAdults, String numberOfInfants, String numberOfChildren)
 	{
 		log.info("Entering number of travellers");
 		Select selectAdults = new Select(HomePage.adults(pom));
-		selectAdults.selectByValue("1");
+		selectAdults.selectByValue(numberOfAdults);
 		
 		Select selectChildren= new Select(HomePage.children(pom));
-		selectChildren.selectByValue("1");
+		selectChildren.selectByValue(numberOfChildren);
 		
 		Select selectInfants = new Select(HomePage.infants(pom));
-		selectInfants.selectByValue("1");	
+		selectInfants.selectByValue(numberOfInfants);	
 		log.info("Travellers information entered successfully");
 	}
 
@@ -88,8 +95,7 @@ public class StepDefinition
 	@Then("^user should be displayed with appropriate result$")
 	public void user_should_be_displayed_with_appropriate_result() 
 	{
-		//System.out.println(driver.getTitle());
-		
+		//System.out.println(driver.getTitle());	
 	}
 	
 	@After
