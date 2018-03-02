@@ -1,6 +1,5 @@
 # BDD TEST FRAMEWORK
-	
-	```
+
 This repository consist of Test Framework using Page Object Model.
 
 ## Running the Assignment:

@@ -30,7 +30,7 @@ Feature: To search for a flight.
     And user enters flight from
     And user enters destination place to reach
     And user enters the departure date
-    And user enters the return date
+    #And user enters the return date
     And user selects "<numberOfAdults>" "<numberOfInfants>" and "<numberOfChildren>"
     When user clicks on search flights button
     Then user should be displayed with appropriate result
