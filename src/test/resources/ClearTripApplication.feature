@@ -19,9 +19,10 @@ Feature: To search for a flight.
 
 #This is positive journey where customer tries to validate whether he is able to search for flight in both way direction    
 @SearchFlightBothWay
-  Scenario: To verify whether user is able to search for flight on one way journey
+  Scenario: To verify whether user is able to search for flight on two way journey
     Given user is on clear trip application homepage
-    And user opts for both way trip
+     And user opts for one way trip
+    #And user opts for both way trip
     And user enters flight from 
     And user enters destination place to reach
     And user enters the departure date

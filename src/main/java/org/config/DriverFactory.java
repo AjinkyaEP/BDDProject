@@ -11,7 +11,6 @@ public class DriverFactory
 
    private static DriverFactory instance;
    private static Logger logger; 
-   private static WebDriver driver;
    
    private DriverFactory()
    {
@@ -25,13 +24,6 @@ public class DriverFactory
       return instance;
    }
 
-   public WebDriver getChromeDriver() 
-   {
-	   System.setProperty("webdriver.chrome.driver", "./src/main/resources/chromedriver.exe");
-	   driver=new ChromeDriver();
-	   return driver;
-   }
-   
    public Logger log() 
    {
 	  String log4jConfigFile = "C:\\Users\\Ajinkya_Chudiwal\\eclipse-workspace\\Framework\\log4j.properties";
