@@ -1,3 +1,9 @@
+/****************************************************************************************************************
+ OBJECTIVE:- This class assist in creating test reports from cucumber json file using MasterThought library
+ AUTHOR:- Ajinkya Chudiwal	
+ EMAIL:-ajinkya_chudiwal@epam.com
+ DATE:- 05/03/2018
+ *****************************************************************************************************************/
 package org.utility;
 
 import net.masterthought.cucumber.ReportBuilder;
@@ -14,7 +20,6 @@ public class GenerateReport {
             List<String> list = new ArrayList<String>();
             list.add("target/cucumber1.json");
             list.add("target/cucumber2.json");
-
             String pluginUrlPath = "";
             String buildNumber = "1";
             String buildProject = "cucumber-jvm";

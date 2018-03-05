@@ -9,12 +9,15 @@ import org.utility.GenerateReport;
 
 public class TestNGExecutionListener implements IExecutionListener 
 {
-	private static Logger log=Pom.logger.getLogger(TestNGExecutionListener.class);
+	private static Logger log=Pom.log().getLogger(TestNGExecutionListener.class);
+	
+	
     public void onExecutionStart() 
     {
         log.info("TestNG is starting the execution");
     }
-    
+    	
+    //Generate report when TestNG finishes with the execution
     public void onExecutionFinish() 
     {
         log.info("Generating the Masterthought Report");

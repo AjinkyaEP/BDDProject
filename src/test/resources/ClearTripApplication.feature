@@ -4,7 +4,7 @@
 @SearchFlight
 Feature: To search for a flight.
 
-  #This is positive journey where customer tries to validate whether is able to search for flight in one way direction.
+  #This is positive journey where customer tries to validate whether he is able to search for flight in one way direction.
   @SearchFlightOneWay
   Scenario Outline: To verify whether user is able to search for flight on one way journey.
     Given user is on clear trip application homepage
@@ -22,7 +22,7 @@ Feature: To search for a flight.
       |              2 |               2 |                2 |
       |              2 |               2 |                1 |
 
-  #This is positive journey where customer tries to validate whether is able to search for round way flight.
+  #This is positive journey where customer tries to validate whether he is able to search for round way flight.
   @SearchFlightBothWay
   Scenario Outline: To verify whether user is able to search for flight for round trip journey.
     Given user is on clear trip application homepage
@@ -34,7 +34,6 @@ Feature: To search for a flight.
     And user selects "<numberOfAdults>" "<numberOfInfants>" and "<numberOfChildren>"
     When user clicks on search flights button
     Then user should be displayed with appropriate result
-
     Examples: 
       | numberOfAdults | numberOfInfants | numberOfChildren |
       |              1 |               1 |                1 |
