@@ -1,5 +1,5 @@
 /*******************************************************************************************************************************************
- OBJECTIVE:- This is a config class which provides configuration parameters and methods which to be intialized to start automation test
+ OBJECTIVE:- This is a config class which provides configuration parameters and methods which to be initialized to start automation test
  AUTHOR:- Ajinkya Chudiwal	
  EMAIL:-ajinkya_chudiwal@epam.com
  DATE:- 05/03/2018
