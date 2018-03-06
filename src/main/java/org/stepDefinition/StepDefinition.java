@@ -1,5 +1,5 @@
 /**************************************************************************************************************
- OBJECTIVE:- This is a Step Defintion class which provides implementation for cucumber feature file steps.
+ OBJECTIVE:- This is a Step Definition class which provides implementation for cucumber feature file steps.
  AUTHOR:- Ajinkya Chudiwal	
  EMAIL:-ajinkya_chudiwal@epam.com
  DATE:- 05/03/2018
@@ -78,7 +78,18 @@ public class StepDefinition
 		log.info("Entering Departure Date");
 		HomePage.departureDate(pom).click();
 		Thread.sleep(1000);
-		HomePage.enterDepartureDate(pom).click();
+		HomePage.enterDate(pom).click();
+		Thread.sleep(1000);
+	}
+	
+	//This step definition assist user in entering return date from the destination place
+	@Given("^user enters the return date$")
+	public void user_enters_the_return_date() throws InterruptedException
+	{
+		log.info("Entering Return Date");
+		HomePage.returnDate(pom).click();
+		Thread.sleep(1000);
+		HomePage.enterDate(pom).click();
 		Thread.sleep(1000);
 	}
 
@@ -102,6 +113,7 @@ public class StepDefinition
 	@When("^user clicks on search flights button$")
 	public void user_clicks_on_search_flights_button() throws InterruptedException
 	{
+		Thread.sleep(1000);
 		HomePage.searchFlightButton(pom).click();
 		Thread.sleep(1000);
 	}

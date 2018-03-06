@@ -87,9 +87,18 @@ public class HomePage
 		return element;
 	}
 	
+	//This method assists in searching for calendar icon on return date calendar
+	public static WebElement returnDate(Pom pom)
+	{
+		List<WebElement>driver1=pom.driver.findElements(By.xpath("//*[@id=\"ReturnDateContainer\"]/dd/div/a/i"));
+		element=driver1.get(0);
+		if (element==null)
+			log.error("Unable to locate element Return date calendar");
+		return element;
+	}
 	
 	//This method assists in entering departure date on calendar
-	public static WebElement enterDepartureDate(Pom pom)
+	public static WebElement enterDate(Pom pom)
 	{
 		List<WebElement>driver1=pom.driver.findElements(By.xpath("//*[@data-handler=\"selectDay\" and @data-year=\"2018\"]"));
 		element=driver1.get(10);
