@@ -5,12 +5,16 @@
  DATE:- 05/03/2018
  **************************************************************************************************************/
 package org.stepDefinition;
+import java.util.List;
+
 import org.apache.log4j.Logger;
 import org.config.Pom;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 import org.pages.HomePage;
 import org.testng.Assert;
+
+import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -21,15 +25,19 @@ import cucumber.api.java.en.When;
 public class StepDefinition 
 {
 	private static Logger log=Pom.log().getLogger(StepDefinition.class);
+	private String userStoryName;
 	Pom pom =new Pom();
 	
-	//This Before hook assists in initializing Web driver
+	//This Before hook assists in initializing Web driver and getting name of currently running user story
 	@Before
-    public void beforeScenario()
+    public void beforeScenario(Scenario scenario)
 	{
-		log.info("Inside Before Scenario");	
+		List<String> scenarioNames=(List<String>) scenario.getSourceTagNames();
+		userStoryName=null;
+		userStoryName=scenarioNames.get(0).substring(1);
+		log.info("Currently running user story :"+userStoryName);
 		pom.intializeDriver();
-    }
+	}
 	
 	//This step definition verifies whether user is on home page of clear trip application
 	@Given("^user is on clear trip application homepage$")
@@ -59,16 +67,18 @@ public class StepDefinition
 	@Given("^user enters flight from$")
 	public void user_enters_flight_from()  
 	{
-		log.info("Entering Flight From");
-	    HomePage.fromPlace(pom).sendKeys("Pune, IN - Lohegaon (PNQ)"+Keys.ENTER);
+		String flightFrom=pom.readData(userStoryName, "flightFrom");
+		log.info("Entering flight from details for user story :"+userStoryName);
+	    HomePage.fromPlace(pom).sendKeys(flightFrom+Keys.ENTER);
 	}
 
 	//This step definition assists user in entering destination place where he needs to travel
 	@Given("^user enters destination place to reach$")
 	public void user_enters_destination_place_to_reach() 
-	{
-		 log.info("Entering Flight Destination");
-		 HomePage.toPlace(pom).sendKeys("Mumbai, IN - Chatrapati Shivaji Airport (BOM)"+Keys.ENTER);
+	{ 
+		 String destinationPlace=pom.readData(userStoryName, "destinationPlace");
+		 log.info("Entering flight destination details for user story "+userStoryName);
+		 HomePage.toPlace(pom).sendKeys(destinationPlace+Keys.ENTER);
 	}
 
 	//This step definition assist user in entering departure date

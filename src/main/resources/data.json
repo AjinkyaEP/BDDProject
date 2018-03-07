@@ -1,0 +1,13 @@
+{
+	"SearchFlightOneWay":{ 
+        		"flightFrom": "Pune, IN - Lohegaon (PNQ)",
+				"destinationPlace": "Mumbai, IN - Chatrapati Shivaji Airport (BOM)",
+				"departureDate": "Fri, 30 Mar, 2018"
+   },
+   "SearchFlightBothWay":{ 
+        		"flightFrom": "Pune, IN - Lohegaon (PNQ)",
+				"destinationPlace": "Mumbai, IN - Chatrapati Shivaji Airport (BOM)",
+				"departureDate": "Fri, 30 Mar, 2018",
+				"returnDate": "Mon, 30 Apr, 2018"
+	}
+}

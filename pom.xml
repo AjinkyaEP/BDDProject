@@ -22,6 +22,11 @@
             <artifactId>selenium-java</artifactId>
             <version>3.9.1</version>
         </dependency>
+		<dependency>
+		    <groupId>org.json</groupId>
+		    <artifactId>json</artifactId>
+		    <version>20180130</version>
+		</dependency>
         <dependency>       
     		<groupId>com.aventstack</groupId>
     		<artifactId>extentreports</artifactId>
@@ -57,11 +62,10 @@
             <version>0.6.0</version>
         </dependency>
         <dependency>
-    <groupId>log4j</groupId>
-    <artifactId>log4j</artifactId>
-    <version>1.2.17</version>
-</dependency>
-        
+		    <groupId>log4j</groupId>
+		    <artifactId>log4j</artifactId>
+		    <version>1.2.17</version>
+		</dependency>       
     </dependencies>
     <build>
         <plugins>
