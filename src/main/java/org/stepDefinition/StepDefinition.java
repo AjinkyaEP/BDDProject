@@ -67,7 +67,8 @@ public class StepDefinition
 	@Given("^user enters flight from$")
 	public void user_enters_flight_from()  
 	{
-		String flightFrom=pom.readData(userStoryName, "flightFrom");
+		//String flightFrom=pom.readData(userStoryName, "flightFrom");
+		String flightFrom=pom.readExcel(userStoryName, "Flight from");
 		log.info("Entering flight from details for user story :"+userStoryName);
 	    HomePage.fromPlace(pom).sendKeys(flightFrom+Keys.ENTER);
 	}
@@ -76,7 +77,8 @@ public class StepDefinition
 	@Given("^user enters destination place to reach$")
 	public void user_enters_destination_place_to_reach() 
 	{ 
-		 String destinationPlace=pom.readData(userStoryName, "destinationPlace");
+		 //String destinationPlace=pom.readData(userStoryName, "destinationPlace");
+		 String destinationPlace=pom.readExcel(userStoryName, "Destination place");
 		 log.info("Entering flight destination details for user story "+userStoryName);
 		 HomePage.toPlace(pom).sendKeys(destinationPlace+Keys.ENTER);
 	}
